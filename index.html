@@ -41,9 +41,9 @@
           </div>
           <h2 class="text-lg font-bold">AURA</h2>
           <nav class="hidden md:flex items-center gap-6 ml-8">
-            <a href="#home" class="text-sm font-medium hover:text-primary">Home</a>
-            <a href="#product" class="text-sm font-medium hover:text-primary">Product</a>
-            <a href="#cart" class="text-sm font-medium hover:text-primary">Cart</a>
+            <a href="#home" data-route="home" class="text-sm font-medium hover:text-primary">Home</a>
+            <a href="#product" data-route="product" class="text-sm font-medium hover:text-primary">Product</a>
+            <a href="#cart" data-route="cart" class="text-sm font-medium hover:text-primary">Cart</a>
           </nav>
         </div>
         <div class="flex items-center gap-2 sm:gap-4">
@@ -62,6 +62,16 @@
             <span class="material-symbols-outlined">shopping_bag</span>
             <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full h-5 min-w-5 px-1 flex items-center justify-center">0</span>
           </a>
+          <button id="mobile-menu-toggle" aria-label="Toggle menu" class="md:hidden h-10 w-10 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+            <span class="material-symbols-outlined">menu</span>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-10 py-3 flex flex-col gap-2">
+          <a href="#home" data-route="home" class="py-2 text-sm font-medium">Home</a>
+          <a href="#product" data-route="product" class="py-2 text-sm font-medium">Product</a>
+          <a href="#cart" data-route="cart" class="py-2 text-sm font-medium">Cart</a>
         </div>
       </div>
     </header>
@@ -265,9 +275,9 @@
         </div>
         <div class="flex flex-col gap-2">
           <h4 class="font-semibold">Shop</h4>
-          <a href="#home" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Home</a>
-          <a href="#product" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Product</a>
-          <a href="#cart" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Cart</a>
+          <a href="#home" data-route="home" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Home</a>
+          <a href="#product" data-route="product" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Product</a>
+          <a href="#cart" data-route="cart" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Cart</a>
         </div>
         <div class="flex flex-col gap-2">
           <h4 class="font-semibold">Customer Service</h4>
@@ -288,6 +298,7 @@
             <input id="newsletter-email" class="w-full text-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-l-lg focus:ring-primary focus:border-primary" placeholder="Enter your email" type="email"/>
             <button id="newsletter-btn" class="bg-primary text-white h-[42px] px-4 rounded-r-lg font-semibold text-sm">Subscribe</button>
           </div>
+          <p id="newsletter-msg" class="mt-2 text-sm hidden"></p>
         </div>
       </div>
       <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
@@ -321,9 +332,34 @@
           if (!el) return;
           if (id === hash) el.classList.remove('hidden'); else el.classList.add('hidden');
         });
+        // highlight active nav and close mobile menu on route change
+        highlightNav(hash);
+        const mm = document.getElementById('mobile-menu');
+        if (mm) mm.classList.add('hidden');
       }
       window.addEventListener('hashchange', showSectionFromHash);
       showSectionFromHash();
+
+      // Active nav highlighting
+      function highlightNav(route) {
+        document.querySelectorAll('a[data-route]').forEach(a => {
+          const active = a.dataset.route === route;
+          a.classList.toggle('text-primary', active);
+          a.classList.toggle('font-semibold', active);
+          a.setAttribute('aria-current', active ? 'page' : 'false');
+        });
+      }
+
+      // Mobile menu toggle
+      const mobileToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileToggle && mobileMenu) {
+        mobileToggle.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          const icon = mobileToggle.querySelector('.material-symbols-outlined');
+          if (icon) icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+        });
+      }
 
       // Cart state
       const CART_KEY = 'aura_cart';
@@ -356,14 +392,14 @@
                 <div class="flex flex-col">
                   <h2 class="font-semibold text-base">${item.name}</h2>
                   ${item.size ? `<p class="text-sm text-gray-600 dark:text-gray-400">Size: ${item.size}</p>` : ''}
-                  <button data-id="${item.id}" class="remove-item text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 mt-2 text-left w-fit">Remove</button>
+                  <button data-id="${item.id}" data-size="${item.size || ''}" class="remove-item text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 mt-2 text-left w-fit">Remove</button>
                 </div>
               </div>
               <div class="col-span-1 flex items-center justify-center">
                 <div class="flex items-center border border-gray-300 dark:border-gray-700 rounded-lg">
-                  <button data-id="${item.id}" class="qty-dec px-3 py-2">-</button>
+                  <button data-id="${item.id}" data-size="${item.size || ''}" class="qty-dec px-3 py-2" aria-label="Decrease quantity">-</button>
                   <span class="px-4 py-2">${item.qty}</span>
-                  <button data-id="${item.id}" class="qty-inc px-3 py-2">+</button>
+                  <button data-id="${item.id}" data-size="${item.size || ''}" class="qty-inc px-3 py-2" aria-label="Increase quantity">+</button>
                 </div>
               </div>
               <div class="col-span-1 text-right font-semibold">${formatMoney(item.price * item.qty)}</div>
@@ -383,16 +419,16 @@
         saveCart();
         renderCart();
       }
-      function removeFromCart(id) {
-        cart = cart.filter(i => i.id !== id);
+      function removeFromCart(id, size) {
+        cart = cart.filter(i => !(i.id === id && (i.size || '') === (size || '')));
         saveCart();
         renderCart();
       }
-      function changeQty(id, delta) {
-        const item = cart.find(i => i.id === id);
+      function changeQty(id, size, delta) {
+        const item = cart.find(i => i.id === id && (i.size || '') === (size || ''));
         if (!item) return;
         item.qty += delta;
-        if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+        if (item.qty <= 0) cart = cart.filter(i => !(i.id === id && (i.size || '') === (size || '')));
         saveCart();
         renderCart();
       }
@@ -433,11 +469,11 @@
         cartItemsEl.addEventListener('click', (e) => {
           const t = e.target;
           if (t.classList.contains('remove-item')) {
-            removeFromCart(t.getAttribute('data-id'));
+            removeFromCart(t.getAttribute('data-id'), t.getAttribute('data-size'));
           } else if (t.classList.contains('qty-inc')) {
-            changeQty(t.getAttribute('data-id'), +1);
+            changeQty(t.getAttribute('data-id'), t.getAttribute('data-size'), +1);
           } else if (t.classList.contains('qty-dec')) {
-            changeQty(t.getAttribute('data-id'), -1);
+            changeQty(t.getAttribute('data-id'), t.getAttribute('data-size'), -1);
           }
         });
       }
@@ -459,12 +495,20 @@
       const newsletterEmail = document.getElementById('newsletter-email');
       newsletterBtn.addEventListener('click', () => {
         const email = (newsletterEmail.value || '').trim();
-        if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
+        const msgEl = document.getElementById('newsletter-msg');
+        const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        if (!valid) {
+          msgEl.textContent = 'Please enter a valid email.';
+          msgEl.className = 'mt-2 text-sm text-red-600';
+          return;
+        }
         const list = JSON.parse(localStorage.getItem('aura_newsletter') || '[]');
         list.push({ email, ts: Date.now() });
         localStorage.setItem('aura_newsletter', JSON.stringify(list));
         newsletterEmail.value = '';
-        alert('Subscribed!');
+        msgEl.textContent = 'Subscribed successfully!';
+        msgEl.className = 'mt-2 text-sm text-green-600';
+        setTimeout(() => { msgEl.textContent = ''; msgEl.className = 'mt-2 text-sm hidden'; }, 2500);
       });
 
       // Init
