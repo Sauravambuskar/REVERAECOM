@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AURA — Premium Fashion</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#1152d4",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              display: ["Manrope"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+  </head>
+  <body class="font-display bg-background-light dark:bg-background-dark text-[#222222] dark:text-gray-200">
+    <!-- Header -->
+    <header class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-solid border-gray-200 dark:border-gray-700">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-10 py-3 flex items-center justify-between">
+        <div class="flex items-center gap-4">
+          <div class="size-6">
+            <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"/></svg>
+          </div>
+          <h2 class="text-lg font-bold">AURA</h2>
+          <nav class="hidden md:flex items-center gap-6 ml-8">
+            <a href="#home" class="text-sm font-medium hover:text-primary">Home</a>
+            <a href="#product" class="text-sm font-medium hover:text-primary">Product</a>
+            <a href="#cart" class="text-sm font-medium hover:text-primary">Cart</a>
+          </nav>
+        </div>
+        <div class="flex items-center gap-2 sm:gap-4">
+          <label class="hidden sm:flex min-w-40 h-10 max-w-64">
+            <div class="flex w-full items-stretch rounded-lg h-full">
+              <div class="text-gray-500 dark:text-gray-400 flex bg-gray-200 dark:bg-gray-800 items-center justify-center pl-3 rounded-l-lg">
+                <span class="material-symbols-outlined text-xl">search</span>
+              </div>
+              <input id="search-input" class="form-input flex w-full flex-1 rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-gray-200 dark:bg-gray-800 h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-l-none" placeholder="Search products" />
+            </div>
+          </label>
+          <button id="theme-toggle" class="h-10 px-3 rounded-lg bg-gray-200 dark:bg-gray-800">
+            <span class="material-symbols-outlined">dark_mode</span>
+          </button>
+          <a href="#cart" class="relative h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+            <span class="material-symbols-outlined">shopping_bag</span>
+            <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full h-5 min-w-5 px-1 flex items-center justify-center">0</span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-screen-xl mx-auto px-4 sm:px-10 py-8">
+      <!-- Home Section -->
+      <section id="home" class="flex flex-col gap-12">
+        <div class="@container">
+          <div class="@[480px]:p-4">
+            <div class="flex min-h-[520px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4" style="background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url('https://lh3.googleusercontent.com/aida-public/AB6AXuAHEu5hNZb8882KCKs4SPsCUGRWQulkXXijeDBMfDSD_RGbOrGzK41ZeKKWeorC7pQzPu-xW6Nuu9Sfti4NBILisTcLof008YXuEmm-xLgoC3J2aG8u6QH4bOFInMM0vVs3XKpmOAFo9QmMET6-1sUKQuHGuT9cuCcu77y76hZXiQmcQnM_8LqlBYWQtZihG68HVrvjhZfILsue1VUbE65MHqy-s5t_eOhv0bjTZr2HGQ_aMGGkrZjAJUoKGfdc-pS4pflgqW8-ru6F');">
+              <div class="flex flex-col gap-4 text-center max-w-xl">
+                <h1 class="text-white text-4xl @[480px]:text-5xl font-black leading-tight">The Summer '24 Collection</h1>
+                <p class="text-white/90 text-sm @[480px]:text-base">Discover timeless pieces designed for the modern wardrobe.</p>
+              </div>
+              <a href="#product" class="flex items-center justify-center rounded-full h-12 px-6 bg-white text-[#222222] text-sm font-bold hover:bg-gray-200">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-2xl font-bold text-center">New Arrivals</h2>
+          <div id="new-arrivals" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 p-4">
+            <!-- Product Card Template -->
+            <div class="product-card relative group flex flex-col gap-2" data-id="hoodie" data-name="Classic Cotton Hoodie" data-price="120" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCaFncg3ZqDvTfejSHzh5cCN26JEaIhizKUn0Upm3mZqQNYqlCgDXdYOgdTsBJ8gcmB8aIHwJ2_xNmqftOeNKgTriaiyHiu7hWk4OUr-oKPETYk8HWdgGxUFx3jv7-nMhxbAggs2tf-nFOzce3-Z_heIBgId2A85kqMwLfbk0QLfRIvhKb1bBCRyc_Ua1zPfmDZYVe_3RNRjx9ySwLOdcciREx1z0CMxRXamCRl6M6MkvsT8-PQtSOe2_wj2SyIWo63Tq7X0H-jST_b">
+              <div class="relative overflow-hidden rounded-lg">
+                <img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaFncg3ZqDvTfejSHzh5cCN26JEaIhizKUn0Upm3mZqQNYqlCgDXdYOgdTsBJ8gcmB8aIHwJ2_xNmqftOeNKgTriaiyHiu7hWk4OUr-oKPETYk8HWdgGxUFx3jv7-nMhxbAggs2tf-nFOzce3-Z_heIBgId2A85kqMwLfbk0QLfRIvhKb1bBCRyc_Ua1zPfmDZYVe_3RNRjx9ySwLOdcciREx1z0CMxRXamCRl6M6MkvsT8-PQtSOe2_wj2SyIWo63Tq7X0H-jST_b" alt="Classic Cotton Hoodie"/>
+                <div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+                <button class="add-to-cart absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+              </div>
+              <div class="flex flex-col items-start gap-1 p-1">
+                <p class="text-sm font-semibold">Classic Cotton Hoodie</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">$120.00</p>
+              </div>
+            </div>
+
+            <div class="product-card relative group flex flex-col gap-2" data-id="sandals" data-name="Leather Cross Sandals" data-price="180" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuC-3sEKgLizl7d4P3qZ10PTLMpqApuGgca_M-CFnOjNEjPwm-wPu0JtWtw5qFzxGj1bUtcTkCHzDg2NlRI0BAHKwrQrAvFS_71GOnrlBZvnF38_Le3qcfAXm0MpWEBVD01VYOLRQqJJrNxP3acLKX18D2NXE-39KV7OnEgNfv7NZS74yIuQ1o0TeLBd1Dem0QTUCTvTUEoe5nDzSZV0SAoDrCXbVNJYk1nqRvoZv1wBfoog_Xn9JcEww0cafF_sCZkZHsiKa-FMBmsf">
+              <div class="relative overflow-hidden rounded-lg">
+                <img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-3sEKgLizl7d4P3qZ10PTLMpqApuGgca_M-CFnOjNEjPwm-wPu0JtWtw5qFzxGj1bUtcTkCHzDg2NlRI0BAHKwrQrAvFS_71GOnrlBZvnF38_Le3qcfAXm0MpWEBVD01VYOLRQqJJrNxP3acLKX18D2NXE-39KV7OnEgNfv7NZS74yIuQ1o0TeLBd1Dem0QTUCTvTUEoe5nDzSZV0SAoDrCXbVNJYk1nqRvoZv1wBfoog_Xn9JcEww0cafF_sCZkZHsiKa-FMBmsf" alt="Leather Cross Sandals"/>
+                <div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+                <button class="add-to-cart absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+              </div>
+              <div class="flex flex-col items-start gap-1 p-1">
+                <p class="text-sm font-semibold">Leather Cross Sandals</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">$180.00</p>
+              </div>
+            </div>
+
+            <div class="product-card relative group flex flex-col gap-2" data-id="trousers" data-name="Relaxed Fit Trousers" data-price="150" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuCumwE1x6ioP29eCcIT-azcohDECoo084eMkBWNOIvg-nFMZ7T-Em34xq9S8QtAxqbqZvSy-zXWvQIxZ8MkVrXWQXNdbmw2CpHKsw51VxJkwfym0fHFIgyBCxvx2Kmbo6HOXCVOAy8YzIXyMwfLw_Ot8KE9Q6sA9O-y_YWlFsNihZR6VSBarip_38M0o8xo-SjBkbuf_VgXSXADZlOgYD--2rgXDONU6FGsAwC57HjlVQs8zNgYahZNmL6jo15f9BqaW-Fvn4Hx_A2X">
+              <div class="relative overflow-hidden rounded-lg">
+                <img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCumwE1x6ioP29eCcIT-azcohDECoo084eMkBWNOIvg-nFMZ7T-Em34xq9S8QtAxqbqZvSy-zXWvQIxZ8MkVrXWQXNdbmw2CpHKsw51VxJkwfym0fHFIgyBCxvx2Kmbo6HOXCVOAy8YzIXyMwfLw_Ot8KE9Q6sA9O-y_YWlFsNihZR6VSBarip_38M0o8xo-SjBkbuf_VgXSXADZlOgYD--2rgXDONU6FGsAwC57HjlVQs8zNgYahZNmL6jo15f9BqaW-Fvn4Hx_A2X" alt="Relaxed Fit Trousers"/>
+                <div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+                <button class="add-to-cart absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+              </div>
+              <div class="flex flex-col items-start gap-1 p-1">
+                <p class="text-sm font-semibold">Relaxed Fit Trousers</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">$150.00</p>
+              </div>
+            </div>
+
+            <div class="product-card relative group flex flex-col gap-2" data-id="scarf" data-name="Pure Silk Scarf" data-price="95" data-image="https://lh3.googleusercontent.com/aida-public/AB6AXuDDXysy8spcmfoyNzcQeo16__2tjYUKvfL0IoABleVpCmkI_Yoith1LPaaJiYiyL8lOX5cOlL6AzriakUhqhWjFZGj8QlIk0vfKvBlbLsVSuwPGiQbhxc-xZ-AfhSm3zdSZ_0lKqAStB9QoqcLUPaOVuxqHwoi0C7UKi-CE6_P0szQkJswT1gGmTrnjjn3LY4RRluJfFZxjFh7gSTSjjXN75U6YuTtZKy0RFl4t8qBPds94pVjA9TmKBJbjaMlzIyDpb_idH1Sx3o6O">
+              <div class="relative overflow-hidden rounded-lg">
+                <img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDXysy8spcmfoyNzcQeo16__2tjYUKvfL0IoABleVpCmkI_Yoith1LPaaJiYiyL8lOX5cOlL6AzriakUhqhWjFZGj8QlIk0vfKvBlbLsVSuwPGiQbhxc-xZ-AfhSm3zdSZ_0lKqAStB9QoqcLUPaOVuxqHwoi0C7UKi-CE6_P0szQkJswT1gGmTrnjjn3LY4RRluJfFZxjFh7gSTSjjXN75U6YuTtZKy0RFl4t8qBPds94pVjA9TmKBJbjaMlzIyDpb_idH1Sx3o6O" alt="Pure Silk Scarf"/>
+                <div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+                <button class="add-to-cart absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Add to Cart</button>
+              </div>
+              <div class="flex flex-col items-start gap-1 p-1">
+                <p class="text-sm font-semibold">Pure Silk Scarf</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400">$95.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Section -->
+      <section id="product" class="hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div class="flex flex-col md:flex-row-reverse gap-4">
+            <div class="flex-grow w-full bg-center bg-no-repeat bg-cover rounded-lg aspect-[4/5]" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzVTK7O7DpIYjxqrF0f1pulkenyyHJxxmOAq7RfxrNq_quHVJG0aP5n0OFK_p8O9tx4I324lsqOaccv8bBqDAkNWcxGAdS6DYx3NxRyEZmw7mvKQt7oX3muQre-dWy24DzG5Q936U4EtvrI7KeKCUwm170EitQKQA9zqldY5-ZqWorXQ2ofjpv4JLIPB9HaaU_gm5VCLQMm7QiF7SPYkmR2_Ae9XF7t1d1h8H80dCuYDCYvQTlMfpmuEfuiJ878AXxnMMHNcojs6eD');"></div>
+            <div class="flex md:flex-col gap-3 w-full md:w-24">
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg border-2 border-primary" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAxOgeREKTJV38P3csjHwnpc_aa7nJ7bmvBppp7U_PMVTpSKlufGvWckCCCBCCMhxRmS9FJ3HFwGO_lQslYR8DYCYRXYuA-N-54zYWIKR1TTUQerje0ZjEEve6vgacgBEaqCBzzO1QPvmZav6ZMh4HEM46MQ_GELdIaVDXpQ6zfWLKnSoaF3tuKfi5wvY6SgVfnOptP3NXOK7UsUu-8papWNTcE7NrS7Lavz0qfYjRaBuZnpA2Ks9_rCRVGERviW_mp3i8vR7HqqNhr');"></div>
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAYsRFg0Cz_4bJQEa4UtMdfpWlmAsZD64teyN4ykQnKUeUaTl7tkQTE1kdukqNgKPmrp5GJjLRypmjEGNvF0ecL6SLhenIvYg-BvtkBzS6o4q8XdlpWCfInpd2CqTG5cVrH-HDQztxBuaFIWhY7bCrcky5FEA3UDA1eQPVlm9y191DrYGRt_jzxdeMrZ60if2JPuvlqZ-CmpF-m7tT1fHuoJfHlqyENIbVEuAVm3fukqybmCiQTaXChPOu3gF2tJkdyqF1WusfwiW63');"></div>
+              <div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5mISep36AQS99quxHWlklA5n02JZnMfRVkt_MoJeWT41IMA-CBG26j724mA3w0GX_dj5mVc2rrOXcN6likDQKQGd4zuRi_aS3P0TmpNcRXu_QWDR4tEiVd8BLsl7mxvnIa9IXBCL-2tpX1yA6OzPpckOKpD0muGTb42EQ1YJlhRjcqL997k2mAykKOcgJ0v6nK0P8PmdrtQS7Smc7XTSUHtF_-kdYslNRRDP3GolzoaG3QJrqc6X0zQaN3wxOy4zbIkKtJoldjxNe');"></div>
+            </div>
+          </div>
+          <div class="flex flex-col gap-6 py-4">
+            <div>
+              <p class="text-gray-600 dark:text-gray-400 text-sm mb-2">AURA</p>
+              <h1 class="text-4xl font-bold">The Silk Midi Dress</h1>
+              <p class="text-2xl font-semibold mt-2">$320.00</p>
+            </div>
+            <div class="flex flex-col gap-3">
+              <p class="text-sm font-medium">Color: <span class="font-bold">Midnight Blue</span></p>
+              <div class="flex gap-2">
+                <button class="size-8 rounded-full bg-[#1e2a47] border-2 border-primary" aria-label="Midnight Blue"></button>
+                <button class="size-8 rounded-full bg-[#f0e4d7] border" aria-label="Ecru"></button>
+                <button class="size-8 rounded-full bg-[#6b2c2c] border" aria-label="Burgundy"></button>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3">
+              <div class="flex justify-between items-center">
+                <p class="text-sm font-medium">Size</p>
+                <a class="text-sm font-medium text-primary hover:underline" href="#">Size Guide</a>
+              </div>
+              <div id="size-options" class="grid grid-cols-5 gap-2">
+                <button data-size="XS" class="size-btn h-12 rounded-lg border text-sm">XS</button>
+                <button data-size="S" class="size-btn h-12 rounded-lg border text-sm border-primary text-primary bg-primary/10">S</button>
+                <button data-size="M" class="size-btn h-12 rounded-lg border text-sm">M</button>
+                <button data-size="L" class="size-btn h-12 rounded-lg border text-sm">L</button>
+                <button data-size="XL" class="size-btn h-12 rounded-lg border text-sm text-gray-400 cursor-not-allowed">XL</button>
+              </div>
+            </div>
+            <div class="flex items-center gap-4 mt-4">
+              <button id="add-midi" class="flex-1 h-12 rounded-lg bg-primary text-white font-bold">Add to Bag</button>
+              <button class="h-12 w-12 rounded-lg border flex items-center justify-center"><span class="material-symbols-outlined">favorite_border</span></button>
+            </div>
+            <div class="flex flex-col divide-y border-t border-b mt-6">
+              <div class="py-5">
+                <details class="group">
+                  <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                    <span>Product Description & Details</span>
+                    <span class="transition group-open:rotate-180">
+                      <span class="material-symbols-outlined">expand_more</span>
+                    </span>
+                  </summary>
+                  <p class="text-gray-600 dark:text-gray-400 mt-3">Crafted from 100% pure Mulberry silk for a flattering silhouette.</p>
+                </details>
+              </div>
+              <div class="py-5">
+                <details class="group">
+                  <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                    <span>Composition & Care</span>
+                    <span class="transition group-open:rotate-180">
+                      <span class="material-symbols-outlined">expand_more</span>
+                    </span>
+                  </summary>
+                  <p class="text-gray-600 dark:text-gray-400 mt-3">100% Mulberry Silk. Dry clean only. Cool iron.</p>
+                </details>
+              </div>
+              <div class="py-5">
+                <details class="group">
+                  <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                    <span>Shipping & Returns</span>
+                    <span class="transition group-open:rotate-180">
+                      <span class="material-symbols-outlined">expand_more</span>
+                    </span>
+                  </summary>
+                  <p class="text-gray-600 dark:text-gray-400 mt-3">Complimentary standard shipping. Free returns within 30 days.</p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Cart Section -->
+      <section id="cart" class="hidden">
+        <h1 class="font-serif text-3xl sm:text-4xl font-bold mb-6">Shopping Cart</h1>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
+          <div class="lg:col-span-2 flex flex-col gap-4">
+            <div id="cart-items" class="flex flex-col gap-4"></div>
+            <p id="empty-cart" class="text-gray-600 dark:text-gray-400">Your cart is empty.</p>
+          </div>
+          <div class="lg:col-span-1">
+            <div class="bg-gray-100 dark:bg-gray-900 p-6 rounded-lg">
+              <h2 class="font-serif text-2xl font-bold mb-6">Order Summary</h2>
+              <div class="flex flex-col gap-4">
+                <div class="flex justify-between items-center text-gray-600 dark:text-gray-300">
+                  <span>Subtotal</span>
+                  <span id="cart-subtotal" class="font-semibold">$0.00</span>
+                </div>
+                <div class="flex justify-between items-center text-gray-600 dark:text-gray-300">
+                  <span>Shipping</span>
+                  <span class="font-semibold">FREE</span>
+                </div>
+                <div class="border-t border-gray-200 dark:border-gray-700 my-2"></div>
+                <div class="flex justify-between items-center text-lg font-bold">
+                  <span>Total</span>
+                  <span id="cart-total">$0.00</span>
+                </div>
+              </div>
+              <button class="mt-6 w-full h-12 rounded-lg bg-primary text-white font-bold">Proceed to Checkout</button>
+              <p class="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">Taxes calculated at checkout</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-gray-200 dark:border-gray-700 mt-10 p-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+        <div class="col-span-2 lg:col-span-1 flex flex-col gap-4">
+          <div class="flex items-center gap-2">
+            <div class="size-5">
+              <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"/></svg>
+            </div>
+            <h2 class="text-lg font-bold">AURA</h2>
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Effortless elegance for the modern wardrobe.</p>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h4 class="font-semibold">Shop</h4>
+          <a href="#home" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Home</a>
+          <a href="#product" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Product</a>
+          <a href="#cart" class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary">Cart</a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h4 class="font-semibold">Customer Service</h4>
+          <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Contact Us</a>
+          <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Shipping & Returns</a>
+          <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary" href="#">FAQ</a>
+        </div>
+        <div class="flex flex-col gap-2">
+          <h4 class="font-semibold">Company</h4>
+          <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary" href="#">About Us</a>
+          <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Careers</a>
+          <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary" href="#">Press</a>
+        </div>
+        <div class="col-span-2 lg:col-span-1 flex flex-col gap-3">
+          <h4 class="font-semibold">Stay in the know</h4>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Sign up for our newsletter to receive updates.</p>
+          <div class="flex items-center mt-2">
+            <input id="newsletter-email" class="w-full text-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-l-lg focus:ring-primary focus:border-primary" placeholder="Enter your email" type="email"/>
+            <button id="newsletter-btn" class="bg-primary text-white h-[42px] px-4 rounded-r-lg font-semibold text-sm">Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+        <p>© 2024 AURA. All rights reserved.</p>
+        <div class="flex gap-4 mt-4 md:mt-0">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- App Script -->
+    <script>
+      // Theme persistence
+      const THEME_KEY = 'aura_theme';
+      const rootHtml = document.documentElement;
+      const savedTheme = localStorage.getItem(THEME_KEY);
+      if (savedTheme === 'dark') rootHtml.classList.add('dark');
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.addEventListener('click', () => {
+        rootHtml.classList.toggle('dark');
+        localStorage.setItem(THEME_KEY, rootHtml.classList.contains('dark') ? 'dark' : 'light');
+      });
+
+      // Router
+      const sections = ['home', 'product', 'cart'];
+      function showSectionFromHash() {
+        const hash = (location.hash || '#home').replace('#', '');
+        sections.forEach(id => {
+          const el = document.getElementById(id);
+          if (!el) return;
+          if (id === hash) el.classList.remove('hidden'); else el.classList.add('hidden');
+        });
+      }
+      window.addEventListener('hashchange', showSectionFromHash);
+      showSectionFromHash();
+
+      // Cart state
+      const CART_KEY = 'aura_cart';
+      let cart = [];
+      function loadCart() {
+        try { cart = JSON.parse(localStorage.getItem(CART_KEY)) || []; } catch { cart = []; }
+      }
+      function saveCart() { localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
+      function formatMoney(n) { return `$${n.toFixed(2)}`; }
+
+      const cartCountEl = document.getElementById('cart-count');
+      const cartItemsEl = document.getElementById('cart-items');
+      const emptyCartEl = document.getElementById('empty-cart');
+      const cartSubtotalEl = document.getElementById('cart-subtotal');
+      const cartTotalEl = document.getElementById('cart-total');
+
+      function renderCart() {
+        if (!cartItemsEl) return;
+        cartItemsEl.innerHTML = '';
+        if (cart.length === 0) {
+          emptyCartEl.classList.remove('hidden');
+        } else {
+          emptyCartEl.classList.add('hidden');
+          cart.forEach(item => {
+            const row = document.createElement('div');
+            row.className = 'grid grid-cols-1 sm:grid-cols-6 gap-4 items-center border-b border-gray-200 dark:border-gray-800 pb-4';
+            row.innerHTML = `
+              <div class="col-span-1 sm:col-span-3 flex items-center gap-4">
+                <div class="w-24 h-32 bg-center bg-cover rounded-lg" style="background-image:url('${item.image}')"></div>
+                <div class="flex flex-col">
+                  <h2 class="font-semibold text-base">${item.name}</h2>
+                  ${item.size ? `<p class="text-sm text-gray-600 dark:text-gray-400">Size: ${item.size}</p>` : ''}
+                  <button data-id="${item.id}" class="remove-item text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 mt-2 text-left w-fit">Remove</button>
+                </div>
+              </div>
+              <div class="col-span-1 flex items-center justify-center">
+                <div class="flex items-center border border-gray-300 dark:border-gray-700 rounded-lg">
+                  <button data-id="${item.id}" class="qty-dec px-3 py-2">-</button>
+                  <span class="px-4 py-2">${item.qty}</span>
+                  <button data-id="${item.id}" class="qty-inc px-3 py-2">+</button>
+                </div>
+              </div>
+              <div class="col-span-1 text-right font-semibold">${formatMoney(item.price * item.qty)}</div>
+              <div class="col-span-1 hidden sm:flex"></div>`;
+            cartItemsEl.appendChild(row);
+          });
+        }
+        const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+        cartSubtotalEl.textContent = formatMoney(subtotal);
+        cartTotalEl.textContent = formatMoney(subtotal);
+        cartCountEl.textContent = cart.reduce((s, i) => s + i.qty, 0);
+      }
+
+      function addToCart(product) {
+        const existing = cart.find(i => i.id === product.id && i.size === product.size);
+        if (existing) existing.qty += product.qty || 1; else cart.push({...product, qty: product.qty || 1});
+        saveCart();
+        renderCart();
+      }
+      function removeFromCart(id) {
+        cart = cart.filter(i => i.id !== id);
+        saveCart();
+        renderCart();
+      }
+      function changeQty(id, delta) {
+        const item = cart.find(i => i.id === id);
+        if (!item) return;
+        item.qty += delta;
+        if (item.qty <= 0) cart = cart.filter(i => i.id !== id);
+        saveCart();
+        renderCart();
+      }
+
+      // Wire New Arrivals add-to-cart
+      document.querySelectorAll('#new-arrivals .product-card').forEach(card => {
+        const btn = card.querySelector('.add-to-cart');
+        btn.addEventListener('click', () => {
+          const p = {
+            id: card.dataset.id,
+            name: card.dataset.name,
+            price: Number(card.dataset.price),
+            image: card.dataset.image,
+          };
+          addToCart(p);
+          location.hash = '#cart';
+        });
+      });
+
+      // Product page add-to-bag
+      const addMidiBtn = document.getElementById('add-midi');
+      let selectedSize = 'S';
+      document.querySelectorAll('#size-options .size-btn').forEach(b => {
+        b.addEventListener('click', () => {
+          if (b.classList.contains('cursor-not-allowed')) return;
+          selectedSize = b.dataset.size;
+          document.querySelectorAll('#size-options .size-btn').forEach(x => x.classList.remove('border-primary','text-primary','bg-primary/10'));
+          b.classList.add('border-primary','text-primary','bg-primary/10');
+        });
+      });
+      addMidiBtn.addEventListener('click', () => {
+        addToCart({ id: 'silk-midi', name: 'The Silk Midi Dress', price: 320, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzVTK7O7DpIYjxqrF0f1pulkenyyHJxxmOAq7RfxrNq_quHVJG0aP5n0OFK_p8O9tx4I324lsqOaccv8bBqDAkNWcxGAdS6DYx3NxRyEZmw7mvKQt7oX3muQre-dWy24DzG5Q936U4EtvrI7KeKCUwm170EitQKQA9zqldY5-ZqWorXQ2ofjpv4JLIPB9HaaU_gm5VCLQMm7QiF7SPYkmR2_Ae9XF7t1d1h8H80dCuYDCYvQTlMfpmuEfuiJ878AXxnMMHNcojs6eD', size: selectedSize });
+        location.hash = '#cart';
+      });
+
+      // Cart events
+      if (cartItemsEl) {
+        cartItemsEl.addEventListener('click', (e) => {
+          const t = e.target;
+          if (t.classList.contains('remove-item')) {
+            removeFromCart(t.getAttribute('data-id'));
+          } else if (t.classList.contains('qty-inc')) {
+            changeQty(t.getAttribute('data-id'), +1);
+          } else if (t.classList.contains('qty-dec')) {
+            changeQty(t.getAttribute('data-id'), -1);
+          }
+        });
+      }
+
+      // Search filter
+      const searchInput = document.getElementById('search-input');
+      if (searchInput) {
+        searchInput.addEventListener('input', () => {
+          const q = searchInput.value.trim().toLowerCase();
+          document.querySelectorAll('#new-arrivals .product-card').forEach(card => {
+            const name = (card.dataset.name || '').toLowerCase();
+            card.classList.toggle('hidden', q && !name.includes(q));
+          });
+        });
+      }
+
+      // Newsletter
+      const newsletterBtn = document.getElementById('newsletter-btn');
+      const newsletterEmail = document.getElementById('newsletter-email');
+      newsletterBtn.addEventListener('click', () => {
+        const email = (newsletterEmail.value || '').trim();
+        if (!email || !email.includes('@')) { alert('Please enter a valid email.'); return; }
+        const list = JSON.parse(localStorage.getItem('aura_newsletter') || '[]');
+        list.push({ email, ts: Date.now() });
+        localStorage.setItem('aura_newsletter', JSON.stringify(list));
+        newsletterEmail.value = '';
+        alert('Subscribed!');
+      });
+
+      // Init
+      loadCart();
+      renderCart();
+    </script>
+  </body>
+</html>

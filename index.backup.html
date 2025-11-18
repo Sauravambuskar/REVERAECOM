@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA - Premium Fashion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1152d4",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Manrope"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden text-[#222222] dark:text-gray-200">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col w-full max-w-[1280px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-gray-200 dark:border-gray-700 px-4 sm:px-6 md:px-10 py-3 w-full">
+<div class="flex items-center gap-4">
+<div class="size-5 text-[#222222] dark:text-gray-200">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-[#222222] dark:text-gray-200 text-lg font-bold leading-tight tracking-[-0.015em]">AURA</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors" href="#">Men</a>
+<a class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors" href="#">Women</a>
+<a class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors" href="#">Kids</a>
+<a class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors" href="#">New Arrivals</a>
+<a class="text-[#222222] dark:text-gray-200 text-sm font-medium leading-normal hover:text-primary dark:hover:text-blue-400 transition-colors" href="#">Sale</a>
+</nav>
+<div class="flex items-center gap-3">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-100 dark:bg-gray-800 text-[#222222] dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">search</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-100 dark:bg-gray-800 text-[#222222] dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">person</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 w-10 bg-gray-100 dark:bg-gray-800 text-[#222222] dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+</div>
+</header>
+<main class="flex flex-col gap-12 md:gap-16 lg:gap-20 py-12 md:py-16">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[560px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4" data-alt="A stylish female model wearing a flowing white summer dress, posing against a soft, neutral background." style='background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.4) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAHEu5hNZb8882KCKs4SPsCUGRWQulkXXijeDBMfDSD_RGbOrGzK41ZeKKWeorC7pQzPu-xW6Nuu9Sfti4NBILisTcLof008YXuEmm-xLgoC3J2aG8u6QH4bOFInMM0vVs3XKpmOAFo9QmMET6-1sUKQuHGuT9cuCcu77y76hZXiQmcQnM_8LqlBYWQtZihG68HVrvjhZfILsue1VUbE65MHqy-s5t_eOhv0bjTZr2HGQ_aMGGkrZjAJUoKGfdc-pS4pflgqW8-ru6F");'>
+<div class="flex flex-col gap-4 text-center max-w-xl">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]"> The Summer '24 Collection: Effortless Elegance </h1>
+<p class="text-white/90 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal"> Discover timeless pieces designed for the modern wardrobe. Experience the perfect blend of comfort and high fashion. </p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-12 px-6 bg-white text-[#222222] text-sm font-bold leading-normal tracking-[0.015em] hover:bg-gray-200 transition-colors">
+<span class="truncate">Shop Now</span>
+</button>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-[#222222] dark:text-gray-200 text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4 pt-5 text-center">Shop by Collection</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 p-4">
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-lg justify-end p-6 aspect-square md:aspect-[5/4]" data-alt="Close-up of a high-quality beige linen fabric." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9nD4zchx7gnd4Tadi-C7hB6F0e2umrLeK85gbCv_UITPTphbFvFA79bQrz40SLgeCUg3a92VIqh0VZ3KJGond1e8kv1CRVCbHCzi3FP46DxkSsIwwr1lcPPjLJ3xyHWGFENKn7uAMPtEN3htN2SJ-rhls8dbFZBzTmhMILIZpM61AAm3WIojRWy1b72rihbKJiJfz2KysvdPJJw8nt2Nq39Zz6VKr7REsQvtqNJud-AzdbwtYJPF4pPzDtoZGE6F_xTPOgSTBiRSg");'>
+<p class="text-white text-2xl font-bold leading-tight w-4/5">The Italian Linen Edit</p>
+<a class="text-white font-semibold text-sm underline" href="#">Shop Now</a>
+</div>
+<div class="bg-cover bg-center flex flex-col gap-3 rounded-lg justify-end p-6 aspect-square md:aspect-[5/4]" data-alt="A man wearing a perfectly tailored navy blue suit." style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 60%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1MToqg99IONNxAPBe28oJXYqg1TiHBviN8sTOlV6g5ESF8wsHjI4lG6FmlUFP-qb6UG1VcSfVDwYgWA1HUDR8tI-26I6-qSSzM_iL9cKe2usC26g4fU9qlnmKg5biCYzrQgbCrairEMF3Y8AmjwJkg5XWXK9DKFlwaYGounun7kmQvlkjeHXpy9NVaKdD_reHbJgV2JoWmxP5H-PlTpadSn4YcIx05MYg8iqWKTV7NrdYJgcW1xAjmDCEN6S6xjsZcTtc4de5szea");'>
+<p class="text-white text-2xl font-bold leading-tight w-4/5">Modern Tailoring</p>
+<a class="text-white font-semibold text-sm underline" href="#">Shop Now</a>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-[#222222] dark:text-gray-200 text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4 pt-5 text-center">New Arrivals</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 p-4">
+<div class="relative group flex flex-col gap-2">
+<div class="relative overflow-hidden rounded-lg">
+<img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A plain white hoodie hanging on a rack." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaFncg3ZqDvTfejSHzh5cCN26JEaIhizKUn0Upm3mZqQNYqlCgDXdYOgdTsBJ8gcmB8aIHwJ2_xNmqftOeNKgTriaiyHiu7hWk4OUr-oKPETYk8HWdgGxUFx3jv7-nMhxbAggs2tf-nFOzce3-Z_heIBgId2A85kqMwLfbk0QLfRIvhKb1bBCRyc_Ua1zPfmDZYVe_3RNRjx9ySwLOdcciREx1z0CMxRXamCRl6M6MkvsT8-PQtSOe2_wj2SyIWo63Tq7X0H-jST_b"/>
+<div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"> Add to Cart </button>
+</div>
+<div class="flex flex-col items-start gap-1 p-1">
+<p class="text-sm font-semibold text-[#222222] dark:text-gray-200">Classic Cotton Hoodie</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">$120.00</p>
+</div>
+</div>
+<div class="relative group flex flex-col gap-2">
+<div class="relative overflow-hidden rounded-lg">
+<img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A pair of stylish brown leather sandals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-3sEKgLizl7d4P3qZ10PTLMpqApuGgca_M-CFnOjNEjPwm-wPu0JtWtw5qFzxGj1bUtcTkCHzDg2NlRI0BAHKwrQrAvFS_71GOnrlBZvnF38_Le3qcfAXm0MpWEBVD01VYOLRQqJJrNxP3acLKX18D2NXE-39KV7OnEgNfv7NZS74yIuQ1o0TeLBd1Dem0QTUCTvTUEoe5nDzSZV0SAoDrCXbVNJYk1nqRvoZv1wBfoog_Xn9JcEww0cafF_sCZkZHsiKa-FMBmsf"/>
+<div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"> Add to Cart </button>
+</div>
+<div class="flex flex-col items-start gap-1 p-1">
+<p class="text-sm font-semibold text-[#222222] dark:text-gray-200">Leather Cross Sandals</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">$180.00</p>
+</div>
+</div>
+<div class="relative group flex flex-col gap-2">
+<div class="relative overflow-hidden rounded-lg">
+<img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A pair of neatly folded beige trousers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCumwE1x6ioP29eCcIT-azcohDECoo084eMkBWNOIvg-nFMZ7T-Em34xq9S8QtAxqbqZvSy-zXWvQIxZ8MkVrXWQXNdbmw2CpHKsw51VxJkwfym0fHFIgyBCxvx2Kmbo6HOXCVOAy8YzIXyMwfLw_Ot8KE9Q6sA9O-y_YWlFsNihZR6VSBarip_38M0o8xo-SjBkbuf_VgXSXADZlOgYD--2rgXDONU6FGsAwC57HjlVQs8zNgYahZNmL6jo15f9BqaW-Fvn4Hx_A2X"/>
+<div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"> Add to Cart </button>
+</div>
+<div class="flex flex-col items-start gap-1 p-1">
+<p class="text-sm font-semibold text-[#222222] dark:text-gray-200">Relaxed Fit Trousers</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">$150.00</p>
+</div>
+</div>
+<div class="relative group flex flex-col gap-2">
+<div class="relative overflow-hidden rounded-lg">
+<img class="aspect-[3/4] w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A flowing cream-colored silk scarf." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDXysy8spcmfoyNzcQeo16__2tjYUKvfL0IoABleVpCmkI_Yoith1LPaaJiYiyL8lOX5cOlL6AzriakUhqhWjFZGj8QlIk0vfKvBlbLsVSuwPGiQbhxc-xZ-AfhSm3zdSZ_0lKqAStB9QoqcLUPaOVuxqHwoi0C7UKi-CE6_P0szQkJswT1gGmTrnjjn3LY4RRluJfFZxjFh7gSTSjjXN75U6YuTtZKy0RFl4t8qBPds94pVjA9TmKBJbjaMlzIyDpb_idH1Sx3o6O"/>
+<div class="absolute top-2 left-2 bg-white text-[#222222] text-xs font-bold px-2 py-1 rounded-full">New</div>
+<button class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center justify-center bg-white/90 dark:bg-black/80 text-[#222222] dark:text-white w-[85%] h-10 rounded-lg text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300"> Add to Cart </button>
+</div>
+<div class="flex flex-col items-start gap-1 p-1">
+<p class="text-sm font-semibold text-[#222222] dark:text-gray-200">Pure Silk Scarf</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">$95.00</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative grid grid-cols-1 md:grid-cols-2 items-center gap-8 p-4 bg-gray-100 dark:bg-gray-800 rounded-lg">
+<div class="w-full h-full">
+<img class="w-full h-full object-cover rounded-lg aspect-square md:aspect-auto" data-alt="Close-up of a model looking confidently at the camera, showcasing timeless style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1D53-MFTzZEcb7xAW5qgihflQFYxFEbeCUJOlUf0h3LO1EAeeYczXML8EICVsXmagtz-Equ6BfYMZsh6kCx3EvQB1UVwa2DO-l1mUKxuz2xqBqFpU1Mg3AvbK4Nx-mZ_sP_t3Oa8p7kB_RyduRKSnzoeJ2qd9gF0DCnznxNELWqgBuOoIImAxSC7ZizrMfcrjxnJZO1DVZO8SuejhfrtrWSqG8k6rno5sIa1uEEiZj2ZKAEBnI7YjBa6-JnzL5rmDfl4MkS6Vq4ir"/>
+</div>
+<div class="flex flex-col gap-4 text-center md:text-left items-center md:items-start p-4 md:p-8">
+<h3 class="text-3xl font-bold tracking-tight text-[#222222] dark:text-gray-200">Timeless Style, Modern Craft</h3>
+<p class="text-gray-600 dark:text-gray-400 max-w-md">We believe in creating pieces that last beyond the season. Our collections are crafted with meticulous attention to detail, using only the finest materials to ensure quality and comfort.</p>
+<a class="inline-block mt-4 text-sm font-bold text-primary dark:text-blue-400 underline underline-offset-4" href="#">Learn Our Story</a>
+</div>
+</div>
+</main>
+<footer class="w-full border-t border-gray-200 dark:border-gray-700 mt-10 p-10">
+<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+<div class="col-span-2 lg:col-span-1 flex flex-col gap-4">
+<div class="flex items-center gap-2">
+<div class="size-5 text-[#222222] dark:text-gray-200">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-[#222222] dark:text-gray-200 text-lg font-bold">AURA</h2>
+</div>
+<p class="text-sm text-gray-600 dark:text-gray-400">Effortless elegance for the modern wardrobe.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-semibold text-[#222222] dark:text-gray-200">Shop</h4>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">Men</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">Women</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">New Arrivals</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-semibold text-[#222222] dark:text-gray-200">Customer Service</h4>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">Contact Us</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">Shipping &amp; Returns</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">FAQ</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-semibold text-[#222222] dark:text-gray-200">Company</h4>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">About Us</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">Careers</a>
+<a class="text-sm text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-blue-400" href="#">Press</a>
+</div>
+<div class="col-span-2 lg:col-span-1 flex flex-col gap-4">
+<h4 class="font-semibold text-[#222222] dark:text-gray-200">Stay in the know</h4>
+<p class="text-sm text-gray-600 dark:text-gray-400">Sign up for our newsletter to receive updates on new arrivals and special offers.</p>
+<div class="flex items-center mt-2">
+<input class="w-full text-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-l-lg focus:ring-primary focus:border-primary" placeholder="Enter your email" type="email"/>
+<button class="bg-primary text-white h-[42px] px-4 rounded-r-lg font-semibold text-sm">Subscribe</button>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
+<p>© 2024 AURA. All rights reserved.</p>
+<div class="flex gap-4 mt-4 md:mt-0">
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+
+
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA - The Silk Midi Dress</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1152d4",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"],
+              "serif": ["Playfair Display", "serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101622] dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-solid border-gray-200 dark:border-gray-800">
+<div class="max-w-screen-xl mx-auto">
+<div class="flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0d121b] dark:text-white">
+<div class="size-6 text-[#0d121b] dark:text-white">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+</div>
+<h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">AURA</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">New In</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Designers</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Clothing</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Shoes</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Accessories</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-2 sm:gap-4">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-500 dark:text-gray-400 flex border-none bg-gray-200 dark:bg-gray-800 items-center justify-center pl-3 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-gray-200 dark:bg-gray-800 focus:border-none h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-200 dark:bg-gray-800 text-[#0d121b] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-xl">favorite_border</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-200 dark:bg-gray-800 text-[#0d121b] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCriPmDJduu6GBum0aLOWSBJwhWy1cP3-MgiFmo-AXRnWPSigpRXh_X4cn82qLcf6pT0de7mQdyEup7THSa1hNA_VXNMQ9L-DdYfIhJZdv0G8k3YKik3xDI2fkKpaSZaHqLlSWzpfuqvjk-EQJ-eu5jwKQvVoR-sNf_TrxhaL4mfdYgvz4-V65rikb05SC0nJT0KU0AW-K547uLXKCItiGtVhgv8elc9FHdaSq6KvBg_KTJpBAIBpXh3ad4Na6rt5ybB8cBps5uB_5X");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<div class="max-w-screen-xl mx-auto px-4 sm:px-10 py-8">
+<div class="flex flex-wrap gap-2 mb-8">
+<a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="#">Home</a>
+<span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+<a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="#">Women</a>
+<span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+<a class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal" href="#">Dresses</a>
+<span class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-normal">/</span>
+<span class="text-[#0d121b] dark:text-white text-sm font-medium leading-normal">The Silk Midi</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+<div class="flex flex-col md:flex-row-reverse gap-4">
+<div class="flex-grow w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden rounded-lg aspect-[4/5]" data-alt="Model wearing the silk midi dress in a neutral setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzVTK7O7DpIYjxqrF0f1pulkenyyHJxxmOAq7RfxrNq_quHVJG0aP5n0OFK_p8O9tx4I324lsqOaccv8bBqDAkNWcxGAdS6DYx3NxRyEZmw7mvKQt7oX3muQre-dWy24DzG5Q936U4EtvrI7KeKCUwm170EitQKQA9zqldY5-ZqWorXQ2ofjpv4JLIPB9HaaU_gm5VCLQMm7QiF7SPYkmR2_Ae9XF7t1d1h8H80dCuYDCYvQTlMfpmuEfuiJ878AXxnMMHNcojs6eD");'></div>
+<div class="flex md:flex-col gap-3 w-full md:w-24 flex-shrink-0">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg cursor-pointer border-2 border-primary" data-alt="Detailed shot of the dress fabric" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxOgeREKTJV38P3csjHwnpc_aa7nJ7bmvBppp7U_PMVTpSKlufGvWckCCCBCCMhxRmS9FJ3HFwGO_lQslYR8DYCYRXYuA-N-54zYWIKR1TTUQerje0ZjEEve6vgacgBEaqCBzzO1QPvmZav6ZMh4HEM46MQ_GELdIaVDXpQ6zfWLKnSoaF3tuKfi5wvY6SgVfnOptP3NXOK7UsUu-8papWNTcE7NrS7Lavz0qfYjRaBuZnpA2Ks9_rCRVGERviW_mp3i8vR7HqqNhr");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg cursor-pointer" data-alt="Side view of the dress" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAYsRFg0Cz_4bJQEa4UtMdfpWlmAsZD64teyN4ykQnKUeUaTl7tkQTE1kdukqNgKPmrp5GJjLRypmjEGNvF0ecL6SLhenIvYg-BvtkBzS6o4q8XdlpWCfInpd2CqTG5cVrH-HDQztxBuaFIWhY7bCrcky5FEA3UDA1eQPVlm9y191DrYGRt_jzxdeMrZ60if2JPuvlqZ-CmpF-m7tT1fHuoJfHlqyENIbVEuAVm3fukqybmCiQTaXChPOu3gF2tJkdyqF1WusfwiW63");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg cursor-pointer" data-alt="Back view of the dress" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD5mISep36AQS99quxHWlklA5n02JZnMfRVkt_MoJeWT41IMA-CBG26j724mA3w0GX_dj5mVc2rrOXcN6likDQKQGd4zuRi_aS3P0TmpNcRXu_QWDR4tEiVd8BLsl7mxvnIa9IXBCL-2tpX1yA6OzPpckOKpD0muGTb42EQ1YJlhRjcqL997k2mAykKOcgJ0v6nK0P8PmdrtQS7Smc7XTSUHtF_-kdYslNRRDP3GolzoaG3QJrqc6X0zQaN3wxOy4zbIkKtJoldjxNe");'></div>
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-lg cursor-pointer" data-alt="Close up on dress details" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRVIgd620eSoQ1NHC_Cb80etoXCj_uvKb1uPJy8sRIyPWvCo5A08dUmPXwXG-58Vitm1Std9p2GS9DmzNQzfBjNQqCPuksj_6G_1fu7Bw67cIO9ehS6a6qCiKHNccRgIj_qim7EOqjYJ7I2fYVSHBtQyOU71dNDVaHIrfWL0DRXgzhqmzTsf4fBb4gdUQ3DLQ06LZ46cfw7fGnf7qFQ5GqMaJbQioQPGc8DL6mw6zshpsB-6hJzbTK9uLZhGjBAGJTCv-ykCBMykOO");'></div>
+</div>
+</div>
+<div class="flex flex-col gap-6 py-4">
+<div>
+<p class="text-gray-600 dark:text-gray-400 text-sm font-normal leading-normal mb-2">AURA</p>
+<h1 class="font-serif text-[#0d121b] dark:text-white text-4xl font-bold leading-tight tracking-tight">The Silk Midi Dress</h1>
+<p class="text-[#0d121b] dark:text-white text-2xl font-semibold leading-tight mt-4">$320.00</p>
+</div>
+<div class="flex flex-col gap-3">
+<p class="text-sm font-medium text-gray-700 dark:text-gray-300">Color: <span class="font-bold text-[#0d121b] dark:text-white">Midnight Blue</span></p>
+<div class="flex gap-2">
+<button class="size-8 rounded-full bg-[#1e2a47] border-2 border-primary ring-2 ring-offset-2 ring-primary ring-offset-background-light dark:ring-offset-background-dark"></button>
+<button class="size-8 rounded-full bg-[#f0e4d7] border border-gray-300 dark:border-gray-700"></button>
+<button class="size-8 rounded-full bg-[#6b2c2c] border border-gray-300 dark:border-gray-700"></button>
+</div>
+</div>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center">
+<p class="text-sm font-medium text-gray-700 dark:text-gray-300">Size</p>
+<a class="text-sm font-medium text-primary hover:underline" href="#">Size Guide</a>
+</div>
+<div class="grid grid-cols-4 gap-2">
+<button class="flex items-center justify-center h-12 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium hover:border-primary dark:hover:border-primary">XS</button>
+<button class="flex items-center justify-center h-12 rounded-lg border border-primary text-primary bg-primary/10 dark:bg-primary/20 text-sm font-medium">S</button>
+<button class="flex items-center justify-center h-12 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium hover:border-primary dark:hover:border-primary">M</button>
+<button class="flex items-center justify-center h-12 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium hover:border-primary dark:hover:border-primary">L</button>
+<button class="flex items-center justify-center h-12 rounded-lg border border-gray-300 dark:border-gray-700 text-sm font-medium text-gray-400 dark:text-gray-600 cursor-not-allowed">XL</button>
+</div>
+</div>
+<div class="flex items-center gap-4 mt-4">
+<button class="flex-1 flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 px-6">Add to Bag</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 border border-gray-300 dark:border-gray-700 text-[#0d121b] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-4">
+<span class="material-symbols-outlined text-2xl">favorite_border</span>
+</button>
+</div>
+<div class="flex flex-col divide-y divide-gray-200 dark:divide-gray-800 border-t border-b border-gray-200 dark:border-gray-800 mt-6">
+<div class="py-5">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+<span>Product Description &amp; Details</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<p class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn">
+                                            Crafted from 100% pure Mulberry silk, this midi dress drapes beautifully for a flattering, feminine silhouette. Featuring a subtle V-neck and delicate straps, it's a timeless piece for any occasion. The fabric's natural sheen adds a touch of understated luxury.
+                                        </p>
+</details>
+</div>
+<div class="py-5">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+<span>Composition &amp; Care</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<p class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn">
+                                            100% Mulberry Silk. Dry clean only. Cool iron on reverse. Do not tumble dry.
+                                        </p>
+</details>
+</div>
+<div class="py-5">
+<details class="group">
+<summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+<span>Shipping &amp; Returns</span>
+<span class="transition group-open:rotate-180">
+<span class="material-symbols-outlined">expand_more</span>
+</span>
+</summary>
+<p class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn">
+                                            Complimentary standard shipping on all orders. Express shipping available. Free returns within 30 days of purchase.
+                                        </p>
+</details>
+</div>
+</div>
+</div>
+</div>
+<div class="py-16">
+<div class="border-t border-gray-200 dark:border-gray-800 pt-12">
+<h2 class="font-serif text-3xl font-bold text-[#0d121b] dark:text-white mb-8">Customer Reviews</h2>
+<div class="flex flex-col md:flex-row gap-8 items-start">
+<div class="flex flex-col items-center gap-2">
+<p class="text-5xl font-bold">4.8</p>
+<div class="flex text-primary">
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star</span>
+<span class="material-symbols-outlined">star_half</span>
+</div>
+<p class="text-sm text-gray-500 dark:text-gray-400">Based on 124 reviews</p>
+</div>
+<div class="w-full flex-1">
+<div class="flex items-center gap-2 mb-1">
+<span class="text-sm">5</span>
+<span class="material-symbols-outlined text-sm text-gray-400">star</span>
+<div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width: 85%"></div></div>
+<span class="text-sm text-gray-500 dark:text-gray-400 w-8 text-right">105</span>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-sm">4</span>
+<span class="material-symbols-outlined text-sm text-gray-400">star</span>
+<div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width: 10%"></div></div>
+<span class="text-sm text-gray-500 dark:text-gray-400 w-8 text-right">12</span>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-sm">3</span>
+<span class="material-symbols-outlined text-sm text-gray-400">star</span>
+<div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width: 3%"></div></div>
+<span class="text-sm text-gray-500 dark:text-gray-400 w-8 text-right">4</span>
+</div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-sm">2</span>
+<span class="material-symbols-outlined text-sm text-gray-400">star</span>
+<div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width: 2%"></div></div>
+<span class="text-sm text-gray-500 dark:text-gray-400 w-8 text-right">3</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-sm">1</span>
+<span class="material-symbols-outlined text-sm text-gray-400">star</span>
+<div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width: 0%"></div></div>
+<span class="text-sm text-gray-500 dark:text-gray-400 w-8 text-right">0</span>
+</div>
+</div>
+</div>
+<div class="mt-10 flex flex-col gap-8 divide-y divide-gray-200 dark:divide-gray-800">
+<div class="pt-8">
+<div class="flex items-center mb-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span>
+</div>
+</div>
+<h3 class="font-bold">Absolutely stunning</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-2">The silk feels incredible and the fit is perfect. It's elegant, simple, and I've received so many compliments. Worth every penny for such a classic piece.</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Olivia R. - 2 weeks ago</p>
+</div>
+<div class="pt-8">
+<div class="flex items-center mb-2">
+<div class="flex text-primary">
+<span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span><span class="material-symbols-outlined text-base">star</span>
+</div>
+</div>
+<h3 class="font-bold">A wardrobe staple</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-2">I was looking for a versatile dress and this is it. I've worn it to a wedding and a casual brunch. The quality is exceptional, as expected from AURA.</p>
+<p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Isabella C. - 1 month ago</p>
+</div>
+</div>
+</div>
+</div>
+<div class="py-16">
+<h2 class="font-serif text-3xl font-bold text-[#0d121b] dark:text-white mb-8 text-center">You Might Also Like</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg overflow-hidden" data-alt="Model in a cashmere sweater" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCojS-MWlv_s9py98KZMXuQ-4-58YxzYepcHnvyGfHQp_OPRQEkp3Ne73KScy3quxjDN9DNtV9CC2OZjfqsVNnnTwX8s6NDFgnojq8thHVDWX1bsGX4ZVkVfN5ylK5c7nT6tVqG2Y-OAFa2beyuxP6JAO-U6QAgjDZ2U0KbC-JX9ObMxM_GGzQeYNztXvR4GXu9IrPYrkmk91ChsGWmUe3r6ElIHQSV0NGp9eqYlxFqFsXE8nCM7Eh8vwynCglgWDy1kOR3lDVcxa3_");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">Cashmere Crewneck</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$250.00</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg" data-alt="Woman wearing tailored trousers" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAV70y3h6ox1Han_llP996_IoDYHbxRnqZlif3OFcbInt1CRjhWesA72S02y8G3ofL0ww85-Jla7nOMBOdCHnf1wCBQGDDD24zIKXM6GxWUAmn44qt0pRV9rnIoqX8TkhJdkJZgOxL-qoEHuzuVcI93NLpsWYMCv0zc1kzfgoLa2UAQlKfSjnDIVLSSIylothupVlPd9YZ0ZYfOdHXmvFZH3gjdFW1wCIvu7q4okioHIShgTPxNAJRqRZhIP9zFU-QOLOCn7B2hqioG");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">The Tailored Trouser</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$290.00</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg" data-alt="Leather tote bag on a neutral background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDgPCj0YSRtA2t9NfFC3TAM2bw0CElSREeR6QjL6HjFElUk0oz_bSHz29KX7tkaYXFsQouSl6YnqlIeLUrrvbqPhIjOnRNduZ-9aMHIpOe9BaOqwoCAj927M-Baf2RgSu03x2A5q_ejBWaZFTfODZD1EwVjhuUs1_gBKeKOzSdpEydbXKL6ZFiAeWlCHqKUm6f2qlb8uTKo632VYMCxjuhb3Ldw7e9NdbW-qRHXcmjpOsyELW3UAzd4ok3uukmzutzTBNsNByYQKYP");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">Leather Shoulder Bag</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$450.00</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg" data-alt="Woman wearing heeled sandals" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAgnM8lbSTw3_s5LOF2gjEPftcwgpacvZdqAusXGDELhZBrpVCe5KrJ7YrchGg7AGIuwqPLBdD3VFB77TPYePsUpOFd54LN5j-d8gHjq9aHYD3OE3oGNv8e9ogtTP6XoMImJJN36MeMLhssNP0VdPwQ-n46kRcpbGfb3MysyoUPNLm6nOXZqlH5UtQyIMeeZgDjzyrhdLxqy5EOwt_o-da2mZQL_hYP18WrkEDwJUxndX8XioTHHm7RCUEHC8mg2a-v9UqJP0Nsh6l");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">The Heeled Sandal</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$380.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURA - Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1152d4",
+              "background-light": "#f6f6f8",
+              "background-dark": "#101622",
+            },
+            fontFamily: {
+              "display": ["Manrope", "sans-serif"],
+              "serif": ["Playfair Display", "serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#101622] dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-solid border-gray-200 dark:border-gray-800">
+<div class="max-w-screen-xl mx-auto">
+<div class="flex items-center justify-between whitespace-nowrap px-4 sm:px-10 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-[#0d121b] dark:text-white">
+<div class="size-6 text-[#0d121b] dark:text-white">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-[#0d121b] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em]">AURA</h2>
+</div>
+<div class="hidden md:flex items-center gap-9">
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">New In</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Designers</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Clothing</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Shoes</a>
+<a class="text-[#0d121b] dark:text-gray-300 text-sm font-medium leading-normal" href="#">Accessories</a>
+</div>
+</div>
+<div class="flex flex-1 justify-end gap-2 sm:gap-4">
+<label class="hidden sm:flex flex-col min-w-40 !h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-500 dark:text-gray-400 flex border-none bg-gray-200 dark:bg-gray-800 items-center justify-center pl-3 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#0d121b] dark:text-white focus:outline-0 focus:ring-0 border-none bg-gray-200 dark:bg-gray-800 focus:border-none h-full placeholder:text-gray-500 dark:placeholder:text-gray-400 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search" value=""/>
+</div>
+</label>
+<div class="flex gap-2">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-gray-200 dark:bg-gray-800 text-[#0d121b] dark:text-white gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-xl">favorite_border</span>
+</button>
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 bg-primary/20 text-primary gap-2 text-sm font-bold leading-normal tracking-[0.015em] min-w-0 px-2.5">
+<span class="material-symbols-outlined text-xl">shopping_bag</span>
+</button>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar placeholder" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCriPmDJduu6GBum0aLOWSBJwhWy1cP3-MgiFmo-AXRnWPSigpRXh_X4cn82qLcf6pT0de7mQdyEup7THSa1hNA_VXNMQ9L-DdYfIhJZdv0G8k3YKik3xDI2fkKpaSZaHqLlSWzpfuqvjk-EQJ-eu5jwKQvVoR-sNf_TrxhaL4mfdYgvz4-V65rikb05SC0nJT0KU0AW-K547uLXKCItiGtVhgv8elc9FHdaSq6KvBg_KTJpBAIBpXh3ad4Na6rt5ybB8cBps5uB_5X");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<div class="max-w-screen-xl mx-auto px-4 sm:px-10 py-12">
+<h1 class="font-serif text-3xl sm:text-4xl font-bold text-[#0d121b] dark:text-white mb-8">Shopping Cart</h1>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 items-start">
+<div class="lg:col-span-2 flex flex-col gap-6">
+<div class="hidden sm:grid grid-cols-6 gap-4 text-sm font-medium text-gray-500 dark:text-gray-400 border-b border-gray-200 dark:border-gray-800 pb-3">
+<div class="col-span-3">Product</div>
+<div class="text-center">Quantity</div>
+<div class="text-right">Price</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-6 gap-4 items-center">
+<div class="col-span-1 sm:col-span-3 flex items-center gap-4">
+<div class="w-24 h-32 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0" data-alt="Model wearing the silk midi dress in a neutral setting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAzVTK7O7DpIYjxqrF0f1pulkenyyHJxxmOAq7RfxrNq_quHVJG0aP5n0OFK_p8O9tx4I324lsqOaccv8bBqDAkNWcxGAdS6DYx3NxRyEZmw7mvKQt7oX3muQre-dWy24DzG5Q936U4EtvrI7KeKCUwm170EitQKQA9zqldY5-ZqWorXQ2ofjpv4JLIPB9HaaU_gm5VCLQMm7QiF7SPYkmR2_Ae9XF7t1d1h8H80dCuYDCYvQTlMfpmuEfuiJ878AXxnMMHNcojs6eD");'></div>
+<div class="flex flex-col">
+<h2 class="font-semibold text-base text-[#0d121b] dark:text-white">The Silk Midi Dress</h2>
+<p class="text-sm text-gray-600 dark:text-gray-400">Color: Midnight Blue</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">Size: S</p>
+<button class="text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 mt-2 text-left w-fit">Remove</button>
+</div>
+</div>
+<div class="col-span-1 flex items-center justify-center">
+<div class="flex items-center border border-gray-300 dark:border-gray-700 rounded-lg">
+<button class="px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-l-lg">-</button>
+<span class="px-4 py-2">1</span>
+<button class="px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-r-lg">+</button>
+</div>
+</div>
+<div class="col-span-1 text-right font-semibold">$320.00</div>
+<div class="col-span-1 hidden sm:flex"></div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800 my-2"></div>
+<div class="grid grid-cols-1 sm:grid-cols-6 gap-4 items-center">
+<div class="col-span-1 sm:col-span-3 flex items-center gap-4">
+<div class="w-24 h-32 bg-center bg-no-repeat bg-cover rounded-lg flex-shrink-0" data-alt="Woman wearing tailored trousers" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAV70y3h6ox1Han_llP996_IoDYHbxRnqZlif3OFcbInt1CRjhWesA72S02y8G3ofL0ww85-Jla7nOMBOdCHnf1wCBQGDDD24zIKXM6GxWUAmn44qt0pRV9rnIoqX8TkhJdkJZgOxL-qoEHuzuVcI93NLpsWYMCv0zc1kzfgoLa2UAQlKfSjnDIVLSSIylothupVlPd9YZ0ZYfOdHXmvFZH3gjdFW1wCIvu7q4okioHIShgTPxNAJRqRZhIP9zFU-QOLOCn7B2hqioG");'></div>
+<div class="flex flex-col">
+<h2 class="font-semibold text-base text-[#0d121b] dark:text-white">The Tailored Trouser</h2>
+<p class="text-sm text-gray-600 dark:text-gray-400">Color: Ecru</p>
+<p class="text-sm text-gray-600 dark:text-gray-400">Size: 26</p>
+<button class="text-sm text-gray-500 dark:text-gray-400 hover:text-red-500 mt-2 text-left w-fit">Remove</button>
+</div>
+</div>
+<div class="col-span-1 flex items-center justify-center">
+<div class="flex items-center border border-gray-300 dark:border-gray-700 rounded-lg">
+<button class="px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-l-lg">-</button>
+<span class="px-4 py-2">1</span>
+<button class="px-3 py-2 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-r-lg">+</button>
+</div>
+</div>
+<div class="col-span-1 text-right font-semibold">$290.00</div>
+<div class="col-span-1 hidden sm:flex"></div>
+</div>
+</div>
+<div class="lg:col-span-1">
+<div class="bg-gray-100 dark:bg-gray-900 p-6 rounded-lg">
+<h2 class="font-serif text-2xl font-bold text-[#0d121b] dark:text-white mb-6">Order Summary</h2>
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-center text-gray-600 dark:text-gray-300">
+<span>Subtotal</span>
+<span class="font-semibold text-[#0d121b] dark:text-white">$610.00</span>
+</div>
+<div class="flex justify-between items-center text-gray-600 dark:text-gray-300">
+<span>Shipping</span>
+<span class="font-semibold text-[#0d121b] dark:text-white">FREE</span>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 my-2"></div>
+<div class="flex justify-between items-center text-lg font-bold text-[#0d121b] dark:text-white">
+<span>Total</span>
+<span>$610.00</span>
+</div>
+</div>
+<button class="mt-8 w-full flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-primary text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 px-6">Proceed to Checkout</button>
+<p class="text-center text-xs text-gray-500 dark:text-gray-400 mt-4">Taxes and shipping calculated at checkout</p>
+</div>
+</div>
+</div>
+<div class="py-16 mt-8">
+<h2 class="font-serif text-3xl font-bold text-[#0d121b] dark:text-white mb-8 text-center">You Might Also Like</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg overflow-hidden" data-alt="Model in a cashmere sweater" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCojS-MWlv_s9py98KZMXuQ-4-58YxzYepcHnvyGfHQp_OPRQEkp3Ne73KScy3quxjDN9DNtV9CC2OZjfqsVNnnTwX8s6NDFgnojq8thHVDWX1bsGX4ZVkVfN5ylK5c7nT6tVqG2Y-OAFa2beyuxP6JAO-U6QAgjDZ2U0KbC-JX9ObMxM_GGzQeYNztXvR4GXu9IrPYrkmk91ChsGWmUe3r6ElIHQSV0NGp9eqYlxFqFsXE8nCM7Eh8vwynCglgWDy1kOR3lDVcxa3_");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">Cashmere Crewneck</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$250.00</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg" data-alt="Leather tote bag on a neutral background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCDgPCj0YSRtA2t9NfFC3TAM2bw0CElSREeR6QjL6HjFElUk0oz_bSHz29KX7tkaYXFsQouSl6YnqlIeLUrrvbqPhIjOnRNduZ-9aMHIpOe9BaOqwoCAj927M-Baf2RgSu03x2A5q_ejBWaZFTfODZD1EwVjhuUs1_gBKeKOzSdpEydbXKL6ZFiAeWlCHqKUm6f2qlb8uTKo632VYMCxjuhb3Ldw7e9NdbW-qRHXcmjpOsyELW3UAzd4ok3uukmzutzTBNsNByYQKYP");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">Leather Shoulder Bag</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$450.00</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg" data-alt="Woman wearing heeled sandals" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDAgnM8lbSTw3_s5LOF2gjEPftcwgpacvZdqAusXGDELhZBrpVCe5KrJ7YrchGg7AGIuwqPLBdD3VFB77TPYePsUpOFd54LN5j-d8gHjq9aHYD3OE3oGNv8e9ogtTP6XoMImJJN36MeMLhssNP0VdPwQ-n46kRcpbGfb3MysyoUPNLm6nOXZqlH5UtQyIMeeZgDjzyrhdLxqy5EOwt_o-da2mZQL_hYP18WrkEDwJUxndX8XioTHHm7RCUEHC8mg2a-v9UqJP0Nsh6l");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">The Heeled Sandal</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$380.00</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 group">
+<div class="w-full bg-center bg-no-repeat aspect-[4/5] bg-cover rounded-lg" data-alt="A silk blouse" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAxOgeREKTJV38P3csjHwnpc_aa7nJ7bmvBppp7U_PMVTpSKlufGvWckCCCBCCMhxRmS9FJ3HFwGO_lQslYR8DYCYRXYuA-N-54zYWIKR1TTUQerje0ZjEEve6vgacgBEaqCBzzO1QPvmZav6ZMh4HEM46MQ_GELdIaVDXpQ6zfWLKnSoaF3tuKfi5wvY6SgVfnOptP3NXOK7UsUu-8papWNTcE7NrS7Lavz0qfYjRaBuZnpA2Ks9_rCRVGERviW_mp3i8vR7HqqNhr");'></div>
+<div class="flex flex-col items-start">
+<h3 class="text-base font-medium group-hover:text-primary dark:group-hover:text-primary">The Silk Blouse</h3>
+<p class="text-sm text-gray-600 dark:text-gray-400">AURA</p>
+<p class="text-base font-semibold mt-1">$220.00</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>
+
+</body></html>
+
+
+
+</body></html>
