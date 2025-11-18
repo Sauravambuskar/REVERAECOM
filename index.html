@@ -34,7 +34,7 @@
   <body class="font-display bg-background-light dark:bg-background-dark text-[#222222] dark:text-gray-200">
     <!-- Header -->
     <header class="sticky top-0 z-20 w-full bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-solid border-gray-200 dark:border-gray-700">
-      <div class="max-w-screen-xl mx-auto px-4 sm:px-10 py-3 flex items-center justify-between">
+      <div class="max-w-screen-xl mx-auto px-4 sm:px-10 py-3 flex items-center justify-between relative">
         <div class="flex items-center gap-4">
           <div class="size-6">
             <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"/></svg>
@@ -58,10 +58,10 @@
           <button id="theme-toggle" class="h-10 px-3 rounded-lg bg-gray-200 dark:bg-gray-800">
             <span class="material-symbols-outlined">dark_mode</span>
           </button>
-          <a href="#cart" class="relative h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
+          <button id="mini-cart-toggle" aria-label="Open cart menu" aria-haspopup="true" aria-expanded="false" class="relative h-10 w-10 rounded-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
             <span class="material-symbols-outlined">shopping_bag</span>
             <span id="cart-count" class="absolute -top-1 -right-1 bg-primary text-white text-xs rounded-full h-5 min-w-5 px-1 flex items-center justify-center">0</span>
-          </a>
+          </button>
           <button id="mobile-menu-toggle" aria-label="Toggle menu" class="md:hidden h-10 w-10 rounded-lg bg-gray-200 dark:bg-gray-800 flex items-center justify-center">
             <span class="material-symbols-outlined">menu</span>
           </button>
@@ -72,6 +72,19 @@
           <a href="#home" data-route="home" class="py-2 text-sm font-medium">Home</a>
           <a href="#product" data-route="product" class="py-2 text-sm font-medium">Product</a>
           <a href="#cart" data-route="cart" class="py-2 text-sm font-medium">Cart</a>
+        </div>
+      </div>
+      <!-- Mini Cart Dropdown -->
+      <div id="mini-cart" class="absolute right-4 sm:right-10 top-[64px] w-80 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl p-4 hidden">
+        <h3 class="font-semibold mb-3">Your Bag</h3>
+        <div id="mini-cart-items" class="flex flex-col gap-3"></div>
+        <div class="flex justify-between items-center mt-3">
+          <span class="text-sm text-gray-600 dark:text-gray-400">Subtotal</span>
+          <span id="mini-cart-subtotal" class="font-semibold">$0.00</span>
+        </div>
+        <div class="flex gap-2 mt-4">
+          <a href="#cart" class="flex-1 h-10 rounded-lg border border-gray-300 dark:border-gray-700 flex items-center justify-center text-sm">View Cart</a>
+          <button class="flex-1 h-10 rounded-lg bg-primary text-white text-sm font-semibold">Checkout</button>
         </div>
       </div>
     </header>
@@ -185,6 +198,11 @@
               </div>
             </div>
             <div class="flex items-center gap-4 mt-4">
+              <div class="flex items-center border border-gray-300 dark:border-gray-700 rounded-lg">
+                <button id="qty-dec" class="px-3 py-2" aria-label="Decrease quantity">-</button>
+                <span id="product-qty" class="px-4 py-2">1</span>
+                <button id="qty-inc" class="px-3 py-2" aria-label="Increase quantity">+</button>
+              </div>
               <button id="add-midi" class="flex-1 h-12 rounded-lg bg-primary text-white font-bold">Add to Bag</button>
               <button class="h-12 w-12 rounded-lg border flex items-center justify-center"><span class="material-symbols-outlined">favorite_border</span></button>
             </div>
@@ -298,7 +316,7 @@
             <input id="newsletter-email" class="w-full text-sm border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 rounded-l-lg focus:ring-primary focus:border-primary" placeholder="Enter your email" type="email"/>
             <button id="newsletter-btn" class="bg-primary text-white h-[42px] px-4 rounded-r-lg font-semibold text-sm">Subscribe</button>
           </div>
-          <p id="newsletter-msg" class="mt-2 text-sm hidden"></p>
+          <p id="newsletter-msg" class="mt-2 text-sm hidden" role="status" aria-live="polite"></p>
         </div>
       </div>
       <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 dark:text-gray-400">
@@ -318,9 +336,12 @@
       const savedTheme = localStorage.getItem(THEME_KEY);
       if (savedTheme === 'dark') rootHtml.classList.add('dark');
       const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.setAttribute('aria-label', 'Toggle dark mode');
+      themeToggle.setAttribute('aria-pressed', rootHtml.classList.contains('dark'));
       themeToggle.addEventListener('click', () => {
         rootHtml.classList.toggle('dark');
         localStorage.setItem(THEME_KEY, rootHtml.classList.contains('dark') ? 'dark' : 'light');
+        themeToggle.setAttribute('aria-pressed', rootHtml.classList.contains('dark'));
       });
 
       // Router
@@ -330,12 +351,23 @@
         sections.forEach(id => {
           const el = document.getElementById(id);
           if (!el) return;
-          if (id === hash) el.classList.remove('hidden'); else el.classList.add('hidden');
+          el.classList.add('transition-opacity','duration-300');
+          if (id === hash) {
+            el.classList.remove('hidden');
+            el.classList.add('opacity-0');
+            requestAnimationFrame(() => el.classList.remove('opacity-0'));
+          } else {
+            el.classList.add('opacity-0');
+            setTimeout(() => el.classList.add('hidden'), 200);
+          }
         });
         // highlight active nav and close mobile menu on route change
         highlightNav(hash);
         const mm = document.getElementById('mobile-menu');
         if (mm) mm.classList.add('hidden');
+        const mini = document.getElementById('mini-cart');
+        const miniToggle = document.getElementById('mini-cart-toggle');
+        if (mini && miniToggle) { mini.classList.add('hidden'); miniToggle.setAttribute('aria-expanded','false'); }
       }
       window.addEventListener('hashchange', showSectionFromHash);
       showSectionFromHash();
@@ -354,10 +386,38 @@
       const mobileToggle = document.getElementById('mobile-menu-toggle');
       const mobileMenu = document.getElementById('mobile-menu');
       if (mobileToggle && mobileMenu) {
+        mobileToggle.setAttribute('aria-expanded','false');
         mobileToggle.addEventListener('click', () => {
           mobileMenu.classList.toggle('hidden');
           const icon = mobileToggle.querySelector('.material-symbols-outlined');
           if (icon) icon.textContent = mobileMenu.classList.contains('hidden') ? 'menu' : 'close';
+          mobileToggle.setAttribute('aria-expanded', (!mobileMenu.classList.contains('hidden')).toString());
+        });
+      }
+
+      // Mini-cart toggle and events
+      const miniCartToggle = document.getElementById('mini-cart-toggle');
+      const miniCartEl = document.getElementById('mini-cart');
+      const miniCartItemsEl = document.getElementById('mini-cart-items');
+      const miniCartSubtotalEl = document.getElementById('mini-cart-subtotal');
+      if (miniCartToggle && miniCartEl) {
+        miniCartToggle.addEventListener('click', (e) => {
+          e.preventDefault();
+          miniCartEl.classList.toggle('hidden');
+          miniCartToggle.setAttribute('aria-expanded', (!miniCartEl.classList.contains('hidden')).toString());
+        });
+        document.addEventListener('click', (e) => {
+          const t = e.target;
+          if (!miniCartEl.classList.contains('hidden') && !miniCartEl.contains(t) && t !== miniCartToggle && !miniCartToggle.contains(t)) {
+            miniCartEl.classList.add('hidden');
+            miniCartToggle.setAttribute('aria-expanded','false');
+          }
+        });
+        miniCartEl.addEventListener('click', (e) => {
+          const t = e.target;
+          if (t.classList.contains('mini-remove')) {
+            removeFromCart(t.getAttribute('data-id'), t.getAttribute('data-size'));
+          }
         });
       }
 
@@ -375,6 +435,39 @@
       const emptyCartEl = document.getElementById('empty-cart');
       const cartSubtotalEl = document.getElementById('cart-subtotal');
       const cartTotalEl = document.getElementById('cart-total');
+      function renderMiniCart() {
+        if (!miniCartItemsEl) return;
+        miniCartItemsEl.innerHTML = '';
+        if (cart.length === 0) {
+          const empty = document.createElement('p');
+          empty.className = 'text-sm text-gray-600 dark:text-gray-400';
+          empty.textContent = 'Your cart is empty.';
+          miniCartItemsEl.appendChild(empty);
+          if (miniCartSubtotalEl) miniCartSubtotalEl.textContent = '$0.00';
+          return;
+        }
+        let subtotal = 0;
+        cart.forEach(item => {
+          subtotal += item.price * item.qty;
+          const row = document.createElement('div');
+          row.className = 'flex items-center justify-between gap-3';
+          row.innerHTML = `
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-16 bg-center bg-cover rounded" style="background-image:url('${item.image}')"></div>
+              <div class="flex flex-col">
+                <p class="text-sm font-semibold">${item.name}</p>
+                ${item.size ? `<p class="text-xs text-gray-600 dark:text-gray-400">Size: ${item.size}</p>` : ''}
+                <p class="text-xs text-gray-600 dark:text-gray-400">Qty: ${item.qty}</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-semibold">${formatMoney(item.price * item.qty)}</span>
+              <button class="mini-remove text-xs text-gray-500 hover:text-red-600" data-id="${item.id}" data-size="${item.size || ''}">Remove</button>
+            </div>`;
+          miniCartItemsEl.appendChild(row);
+        });
+        if (miniCartSubtotalEl) miniCartSubtotalEl.textContent = formatMoney(subtotal);
+      }
 
       function renderCart() {
         if (!cartItemsEl) return;
@@ -411,6 +504,7 @@
         cartSubtotalEl.textContent = formatMoney(subtotal);
         cartTotalEl.textContent = formatMoney(subtotal);
         cartCountEl.textContent = cart.reduce((s, i) => s + i.qty, 0);
+        renderMiniCart();
       }
 
       function addToCart(product) {
@@ -450,6 +544,9 @@
 
       // Product page add-to-bag
       const addMidiBtn = document.getElementById('add-midi');
+      const productQtyEl = document.getElementById('product-qty');
+      const qtyDecBtn = document.getElementById('qty-dec');
+      const qtyIncBtn = document.getElementById('qty-inc');
       let selectedSize = 'S';
       document.querySelectorAll('#size-options .size-btn').forEach(b => {
         b.addEventListener('click', () => {
@@ -459,8 +556,21 @@
           b.classList.add('border-primary','text-primary','bg-primary/10');
         });
       });
+      if (qtyDecBtn && productQtyEl) {
+        qtyDecBtn.addEventListener('click', () => {
+          const current = Number(productQtyEl.textContent) || 1;
+          productQtyEl.textContent = Math.max(1, current - 1);
+        });
+      }
+      if (qtyIncBtn && productQtyEl) {
+        qtyIncBtn.addEventListener('click', () => {
+          const current = Number(productQtyEl.textContent) || 1;
+          productQtyEl.textContent = current + 1;
+        });
+      }
       addMidiBtn.addEventListener('click', () => {
-        addToCart({ id: 'silk-midi', name: 'The Silk Midi Dress', price: 320, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzVTK7O7DpIYjxqrF0f1pulkenyyHJxxmOAq7RfxrNq_quHVJG0aP5n0OFK_p8O9tx4I324lsqOaccv8bBqDAkNWcxGAdS6DYx3NxRyEZmw7mvKQt7oX3muQre-dWy24DzG5Q936U4EtvrI7KeKCUwm170EitQKQA9zqldY5-ZqWorXQ2ofjpv4JLIPB9HaaU_gm5VCLQMm7QiF7SPYkmR2_Ae9XF7t1d1h8H80dCuYDCYvQTlMfpmuEfuiJ878AXxnMMHNcojs6eD', size: selectedSize });
+        const qty = Number(productQtyEl ? productQtyEl.textContent : '1') || 1;
+        addToCart({ id: 'silk-midi', name: 'The Silk Midi Dress', price: 320, image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAzVTK7O7DpIYjxqrF0f1pulkenyyHJxxmOAq7RfxrNq_quHVJG0aP5n0OFK_p8O9tx4I324lsqOaccv8bBqDAkNWcxGAdS6DYx3NxRyEZmw7mvKQt7oX3muQre-dWy24DzG5Q936U4EtvrI7KeKCUwm170EitQKQA9zqldY5-ZqWorXQ2ofjpv4JLIPB9HaaU_gm5VCLQMm7QiF7SPYkmR2_Ae9XF7t1d1h8H80dCuYDCYvQTlMfpmuEfuiJ878AXxnMMHNcojs6eD', size: selectedSize, qty });
         location.hash = '#cart';
       });
 
